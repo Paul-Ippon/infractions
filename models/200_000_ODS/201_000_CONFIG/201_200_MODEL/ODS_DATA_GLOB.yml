@@ -5,7 +5,7 @@ models:
     config:
       materialized: table
       database: "{{ target.database}}"
-      schema: "{{ target.schema }}_ODS"
+      schema: "ODS"
       alias: DATA_GLOB
     columns:
       - name: codgeo
