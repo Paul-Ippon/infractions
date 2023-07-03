@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: DSA_DATA_GLOB
+    database: "{{ target.database}}"
+    schema: "{{ target.schema }}_DSA"
+    tables:
+      - name: DATA_GLOB
+        columns:
+        - name: CODGEO
+        - name: ANNEE
+        - name: CLASSE
+        - name: UNITEDECOMPTE
+        - name: VALEURPUBLIEE
+        - name: FAITS
+        - name: TAUXPOURMILLE
+        - name: COMPLEMENTINFOVAL
+        - name: COMPLEMENTINFOTAUX
+        - name: POP
+        - name: MILLPOP
+        - name: LOG
+        - name: MILLLOG

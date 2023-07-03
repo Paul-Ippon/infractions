@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: 210_100_LOAD_DATA_GLOB
+    config:
+      materialized: table
+      database: "{{ target.database}}"
+      schema: "{{ target.schema }}_ODS"
+      alias: DATA_GLOB
+    columns:
+      - name: codgeo
+        data_type: varchar(5)
+        tests:
+          - not_null
+      - name: annee
+        data_type: varchar(2)
+        tests:
+          - not_null
+      - name: classe
+        data_type: varchar(255)
+        tests:
+          - not_null
+      - name: unitedecompte
+        data_type: varchar(255)
+        tests:
+          - not_null
+      - name: valeurpubliee
+        data_type: varchar(5)
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['diff', 'ndiff']
+      - name: faits
+        data_type: int
+      - name: tauxpourmille
+        data_type: double
+      - name: complementinfoval
+        data_type: double
+      - name: complementinfotaux
+        data_type: double
+      - name: pop
+        data_type: int
+      - name: millpop
+        data_type: tinyint
+      - name: log
+        data_type: double
+      - name: milllog
+        data_type: tinyint
