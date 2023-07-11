@@ -9,9 +9,9 @@ sources:
         columns:
         - name: CODGEO
         - name: ANNEE
-        - name: CODE_DEPARTEMENT
-        - name: CODE_REGION
-        - name: UNITE_DE_COMPTE
+        - name: CODEDEPARTEMENT
+        - name: CODEREGION
+        - name: UNITEDECOMPTE
         - name: MILLPOP
         - name: MILLLOG
         - name: FAITS
