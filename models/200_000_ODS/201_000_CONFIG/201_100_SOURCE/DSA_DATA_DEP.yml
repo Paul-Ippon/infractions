@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: DSA_DATA_DEP
+    database: "{{ target.database }}"
+    schema: "{{ target.schema }}_DSA"
+    tables:
+      - name: DATA_DEP
+        columns:
+        - name: CODGEO
+        - name: ANNEE
+        - name: CODE_DEPARTEMENT
+        - name: CODE_REGION
+        - name: UNITE_DE_COMPTE
+        - name: MILLPOP
+        - name: MILLLOG
+        - name: FAITS
+        - name: POP
+        - name: LOG
+        - name: TAUXPOURMILLE

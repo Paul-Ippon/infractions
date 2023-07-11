@@ -7,16 +7,16 @@ sources:
     tables:
       - name: DATA_GLOB
         columns:
-        - name: CODGEO
-        - name: ANNEE
-        - name: CLASSE
-        - name: UNITEDECOMPTE
-        - name: VALEURPUBLIEE
-        - name: FAITS
-        - name: TAUXPOURMILLE
-        - name: COMPLEMENTINFOVAL
-        - name: COMPLEMENTINFOTAUX
-        - name: POP
-        - name: MILLPOP
-        - name: LOG
-        - name: MILLLOG
+          - name: CODGEO
+          - name: ANNEE
+          - name: CLASSE
+          - name: UNITEDECOMPTE
+          - name: VALEURPUBLIEE
+          - name: FAITS
+          - name: TAUXPOURMILLE
+          - name: COMPLEMENTINFOVAL
+          - name: COMPLEMENTINFOTAUX
+          - name: POP
+          - name: MILLPOP
+          - name: LOG
+          - name: MILLLOG

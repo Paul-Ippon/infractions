@@ -1,0 +1,86 @@
+version: 2
+
+models:
+  - name: 210_300_LOAD_ZONAGES_SUPRACOMMUNAUX
+    config:
+      materialized: table
+      database: "{{ target.database }}"
+      schema: "ODS"
+      alias: ZONAGES_SUPRACOMMUNAUX
+    columns:
+    - name: codgeo
+      data_type: varchar(5)
+      tests:
+        - not_null
+    - name: nom_de_la_commune
+      data_type: varchar(255)
+      tests:
+        - not_null
+    - name: code_departement
+      data_type: varchar(3)
+      tests:
+        - not_null
+    - name: code_region
+      data_type: varchar(2)
+      tests:
+        - not_null
+    - name: code_arrondissement
+      data_type: varchar(4)
+      tests:
+        - not_null
+    - name: code_canton
+      data_type: varchar(5)
+      tests:
+        - not_null
+    - name: code_epci
+      data_type: varchar(9)
+      tests:
+        - not_null
+    - name: nature_epci
+      data_type: varchar(255)
+      tests:
+        - not_null
+    - name: ze2020
+      data_type: varchar(5)
+      tests:
+        - not_null
+    - name: uu2020
+      data_type: varchar(5)
+      tests:
+        - not_null
+    - name: tuu2017
+      data_type: varchar(255)
+      tests:
+        - not_null
+    - name: tduu2017
+      data_type: varchar(255)
+      tests:
+        - not_null
+    - name: uustatut2017
+      data_type: varchar(255)
+      tests:
+        - not_null
+    - name: aav2020
+      data_type: varchar(3)
+      tests:
+        - not_null
+    - name: taav2017
+      data_type: varchar(255)
+      tests:
+        - not_null
+    - name: tdaav2017
+      data_type: varchar(255)
+      tests:
+        - not_null
+    - name: cateaav2020
+      data_type: varchar(255)
+      tests:
+        - not_null
+    - name: bv2012
+      data_type: varchar(5)
+      tests:
+        - not_null
+    - name: typo_degre_densite
+      data_type: varchar(255)
+      tests:
+        - not_null

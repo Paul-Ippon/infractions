@@ -4,7 +4,7 @@ models:
   - name: 210_100_LOAD_DATA_GLOB
     config:
       materialized: table
-      database: "{{ target.database}}"
+      database: "{{ target.database }}"
       schema: "ODS"
       alias: DATA_GLOB
     columns:
