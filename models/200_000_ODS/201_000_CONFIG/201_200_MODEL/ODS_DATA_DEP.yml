@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: 210_200_LOAD_DATA_DEP
+    config:
+      materialized: table
+      database: "{{ target.database }}"
+      schema: "ODS"
+      alias: DATA_DEP
+    columns:
+      - name: classe
+        data_type: varchar(255)
+        tests:
+          - not_null
+      - name: annee
+        data_type: varchar(2)
+        tests:
+          - not_null
+      - name: code_departement
+        data_type: varchar(3)
+        tests:
+          - not_null
+      - name: code_region
+        data_type: varchar(2)
+        tests:
+          - not_null
+      - name: unite_de_compte
+        data_type: varchar(255)
+        tests:
+          - not_null
+      - name: millpop
+        data_type: varchar(2)
+        tests:
+          - not_null
+      - name: milllog
+        data_type: varchar(2)
+        tests:
+          - not_null
+      - name: faits
+        data_type: int
+        tests:
+          - not_null
+      - name: pop
+        data_type: int
+        tests:
+          - not_null
+      - name: log
+        data_type: double
+        tests:
+          - not_null
+      - name: tauxpourmille
+        data_type: double
+        tests:
+          - not_null

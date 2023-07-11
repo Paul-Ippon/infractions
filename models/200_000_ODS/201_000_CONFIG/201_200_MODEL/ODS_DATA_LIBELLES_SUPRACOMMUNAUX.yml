@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: 210_400_LOAD_LIBELLES_SUPRACOMMUNAUX
+    config:
+      materialized: table
+      database: "{{ target.database }}"
+      schema: "ODS"
+      alias: LIBELLES_SUPRACOMMUNAUX
+    columns:
+      - name: nivgeo
+        data_type: varchar(7)
+        tests:
+          - not_null
+      - name: codgeo
+        data_type: varchar(9)
+        tests:
+          - not_null
+      - name: libgeo
+        data_type: varchar(255)
+        tests:
+          - not_null
+      - name: nb_com
+        data_type: varchar(4)
+        tests:
+          - not_null

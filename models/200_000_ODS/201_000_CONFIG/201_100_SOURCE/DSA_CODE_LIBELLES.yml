@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: DSA_CODE_LIBELLES
+    database: "{{ target.database}}"
+    schema: "{{ target.schema }}_DSA"
+    tables:
+      - name: CODE_LIBELLES
+        columns:
+          - name: VARIABLE
+          - name: CODE    
+          - name: LIBELLE 
