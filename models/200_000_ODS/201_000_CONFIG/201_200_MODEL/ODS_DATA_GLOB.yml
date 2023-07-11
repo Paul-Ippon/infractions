@@ -10,39 +10,51 @@ models:
     columns:
       - name: codgeo
         data_type: varchar(5)
+        description: '{{ doc("ods_data_glob_codegeo") }}'
         tests:
           - not_null
       - name: annee
         data_type: varchar(2)
+        description: '{{ doc("ods_data_glob_annee") }}'
         tests:
           - not_null
       - name: classe
         data_type: varchar(255)
+        description: '{{ doc("ods_data_glob_classe") }}'
         tests:
           - not_null
       - name: unitedecompte
         data_type: varchar(255)
+        description: '{{ doc("ods_data_glob_unitedecompte") }}'
         tests:
           - not_null
       - name: valeurpubliee
         data_type: varchar(5)
+        description: '{{ doc("ods_data_glob_valeurpubliee") }}'
         tests:
           - not_null
           - accepted_values:
               values: ['diff', 'ndiff']
       - name: faits
         data_type: int
+        description: '{{ doc("ods_data_glob_faits") }}'
       - name: tauxpourmille
         data_type: double
+        description: '{{ doc("ods_data_glob_tauxpourmille") }}'
       - name: complementinfoval
         data_type: double
+        description: '{{ doc("ods_data_glob_valeurpubliee") }}'
       - name: complementinfotaux
         data_type: double
       - name: pop
+        description: '{{ doc("ods_data_glob_pop") }}'
         data_type: int
       - name: millpop
         data_type: tinyint
+        description: '{{ doc("ods_data_glob_pop") }}'
       - name: log
         data_type: double
+        description: '{{ doc("ods_data_glob_log") }}'
       - name: milllog
         data_type: tinyint
+        description: '{{ doc("ods_data_glob_log") }}'
