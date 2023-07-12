@@ -8,7 +8,7 @@ models:
       schema: "ODS"
       alias: ZONAGES_SUPRACOMMUNAUX
     columns:
-    - name: codgeo
+    - name: codegeo
       data_type: varchar(5)
       tests:
         - not_null

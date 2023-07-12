@@ -16,15 +16,15 @@ models:
         data_type: varchar(2)
         tests:
           - not_null
-      - name: code_departement
+      - name: codedepartement
         data_type: varchar(3)
         tests:
           - not_null
-      - name: code_region
+      - name: coderegion
         data_type: varchar(2)
         tests:
           - not_null
-      - name: unite_de_compte
+      - name: unitedecompte
         data_type: varchar(255)
         tests:
           - not_null
