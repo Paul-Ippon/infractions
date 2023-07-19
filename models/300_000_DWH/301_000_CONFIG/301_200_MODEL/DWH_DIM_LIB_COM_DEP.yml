@@ -1,12 +1,12 @@
 version: 2
 
 models:
-  - name: 210_400_LOAD_LIBELLES_SUPRACOMMUNAUX
+  - name: 310_230_DIM_LIB_COM_DEP
     config:
       materialized: table
       database: "{{ target.database }}"
-      schema: "ODS"
-      alias: LIBELLES_SUPRACOMMUNAUX
+      schema: "DWH"
+      alias: DIM_LIB_COM_DEP
     columns:
       - name: nivgeo
         data_type: varchar(7)
@@ -16,6 +16,7 @@ models:
         data_type: varchar(9)
         tests:
           - not_null
+          - unique
       - name: libgeo
         data_type: varchar(255)
         tests:

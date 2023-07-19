@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: DWH_DIM_LIB_COM_EPCI
+    database: "{{ target.database }}"
+    schema: "{{ target.schema }}_DWH"
+    tables:
+      - name: DIM_LIB_COM_EPCI
+        columns:
+          - name: NIVGEO
+          - name: CODGEO
+          - name: LIBGEO
+          - name: NB_COM

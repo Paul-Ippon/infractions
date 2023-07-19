@@ -1,0 +1,23 @@
+
+version: 2
+
+models:
+  - name: 310_320_DIM_EPCI
+    config:
+      materialized: incremental
+      database: "{{ target.database }}"
+      schema: "DWH"
+      alias: DIM_EPCI
+      unique_key: code_epci
+      incremental_strategy: merge
+      merge_exclude_columns: ['inserted_at']
+    columns:
+    - name: code_epci
+      data_type: varchar(9)
+      tests:
+        - not_null
+        - unique
+    - name: nature_epci
+      data_type: varchar(225)
+      tests:
+        - not_null

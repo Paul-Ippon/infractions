@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: DWH_DIM_LIB_COM_AAV
+    database: "{{ target.database }}"
+    schema: "{{ target.schema }}_DWH"
+    tables:
+      - name: DIM_LIB_COM_AAV
+        columns:
+          - name: NIVGEO
+          - name: CODGEO
+          - name: LIBGEO
+          - name: NB_COM
