@@ -1,0 +1,28 @@
+
+version: 2
+
+models:
+  - name: 310_350_DIM_MISC
+    config:
+      materialized: incremental
+      database: "{{ target.database }}"
+      schema: "DWH"
+      alias: DIM_MISC
+      unique_key: aav2020
+      incremental_strategy: merge
+      merge_exclude_columns: ['inserted_at']
+    columns:
+    - name: dim_misc_id
+      data_type: varchar(64)
+      tests:
+        - not_null
+        - unique
+    - name: uustatut2017
+      data_type: varchar(255)
+      tests:
+        - not_null
+    - name: cateaav2020
+      data_type: varchar(255)
+      tests:
+        - not_null
+      

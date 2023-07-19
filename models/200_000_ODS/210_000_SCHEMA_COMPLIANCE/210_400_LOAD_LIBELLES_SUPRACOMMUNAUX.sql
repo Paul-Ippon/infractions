@@ -8,7 +8,7 @@ with
             nivgeo::varchar(7) as nivgeo,
             codgeo::varchar(9) as codgeo,
             libgeo::varchar(255) as libgeo,
-            nb_com::varchar(4) as nb_com
+            nb_com::smallint as nb_com
         from get_source
     )
 select *

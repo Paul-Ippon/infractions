@@ -1,12 +1,14 @@
 version: 2
 
 models:
-  - name: 210_500_LOAD_CODE_LIBELLES
+  - name: 310_140_DIM_CODE_NATURE_EPCI
     config:
-      materialized: table
+      materialized: incremental
       database: "{{ target.database }}"
-      schema: "ODS"
-      alias: CODE_LIBELLES
+      schema: "DWH"
+      alias: DIM_CODE_NATURE_EPCI
+      unique_key: code
+      incremental_strategy: merge
     columns:
       - name: variable
         data_type: varchar(32)
@@ -16,6 +18,7 @@ models:
         data_type: varchar(2)
         tests:
           - not_null
+          - unique
       - name: libelle
         data_type: varchar(255)
         tests:

@@ -1,12 +1,14 @@
 version: 2
 
 models:
-  - name: 210_500_LOAD_CODE_LIBELLES
+  - name: 310_180_DIM_CODE_TDUU
     config:
-      materialized: table
+      materialized: incremental
       database: "{{ target.database }}"
-      schema: "ODS"
-      alias: CODE_LIBELLES
+      schema: "DWH"
+      alias: DIM_CODE_TDUU
+      unique_key: code
+      incremental_strategy: merge
     columns:
       - name: variable
         data_type: varchar(32)

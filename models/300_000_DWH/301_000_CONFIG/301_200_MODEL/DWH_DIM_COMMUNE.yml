@@ -1,0 +1,79 @@
+
+version: 2
+
+models:
+  - name: 310_310_DIM_COMMUNE
+    config:
+      materialized: incremental
+      database: "{{ target.database }}"
+      schema: "DWH"
+      alias: DIM_COMMUNE
+      unique_key: codegeo
+      incremental_strategy: merge
+      merge_exclude_columns: ['inserted_at']
+    columns:
+    - name: codegeo
+      data_type: varchar(5)
+      tests:
+        - not_null
+        - unique
+    - name: nom_de_la_commune
+      data_type: varchar(255)
+      tests:
+        - not_null
+    - name: code_departement
+      data_type: varchar(3)
+      tests:
+        - not_null
+    - name: code_region
+      data_type: varchar(2)
+      tests:
+        - not_null
+    - name: code_arrondissement
+      data_type: varchar(4)
+      tests:
+        - not_null
+    - name: code_canton
+      data_type: varchar(5)
+      tests:
+        - not_null
+    - name: code_epci
+      data_type: varchar(9)
+      tests:
+        - not_null
+    - name: ze
+      data_type: varchar(5)
+      tests:
+        - not_null
+    - name: uu
+      data_type: varchar(5)
+      tests:
+        - not_null
+    - name: uustatut
+      data_type: varchar(2)
+      tests:
+        - not_null
+    - name: aav
+      data_type: varchar(3)
+      tests:
+        - not_null
+    - name: cateaav
+      data_type: varchar(2)
+      tests:
+        - not_null
+    - name: bv
+      data_type: varchar(5)
+      tests:
+        - not_null
+    - name: typo_degre_densite
+      data_type: varchar(2)
+      tests:
+        - not_null
+    - name: inserted_at
+      data_type: timestamp
+      tests:
+          - not_null
+    - name: updated_at
+      data_type: timestamp
+      tests:
+          - not_null
