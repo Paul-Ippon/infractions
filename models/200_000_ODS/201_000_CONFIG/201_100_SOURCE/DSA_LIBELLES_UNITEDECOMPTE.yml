@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: DSA_LIBELLES_UNITEDECOMPTE
+    database: "{{ target.database}}"
+    schema: "{{ target.schema }}_DSA"
+    tables:
+      - name: LIBELLES_UNITEDECOMPTE
+        columns:
+          - name: CODE    
+          - name: LIBELLE 
