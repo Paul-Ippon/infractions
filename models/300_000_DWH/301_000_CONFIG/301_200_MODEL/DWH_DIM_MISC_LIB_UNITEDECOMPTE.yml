@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: 310_320_DIM_MISC_LIB_UNITEDECOMPTE
+    config:
+      materialized: table
+      database: "{{ target.database }}"
+      schema: "DWH"
+      alias: DIM_MISC_LIB_UNITEDECOMPTE
+    columns:
+      - name: code
+        data_type: varchar(2)
+        tests:
+          - not_null
+          - unique
+      - name: libelle
+        data_type: varchar(255)
+        tests:
+          - not_null

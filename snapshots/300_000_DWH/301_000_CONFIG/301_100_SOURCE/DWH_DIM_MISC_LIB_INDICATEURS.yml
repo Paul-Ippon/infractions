@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: DWH_DIM_MISC_LIB_INDICATEURS
+    database: "{{ target.database }}"
+    schema: "{{ target.schema }}_DWH"
+    tables:
+      - name: DIM_MISC_LIB_INDICATEURS
+        columns:
+          - name: CODE
+          - name: LIBELLE
