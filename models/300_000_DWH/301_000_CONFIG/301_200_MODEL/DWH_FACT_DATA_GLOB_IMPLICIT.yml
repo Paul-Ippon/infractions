@@ -1,0 +1,49 @@
+
+version: 2
+
+models:
+  - name: 320_112_FACT_DATA_GLOB_IMPLICIT
+    config:
+      materialized: incremental
+      database: "{{ target.database }}"
+      schema: "DWH"
+      alias: FACT_DATA_GLOB_IMPLICIT
+      unique_key: [codgeo, annee, codeclasse]
+      incremental_strategy: merge
+      merge_exclude_columns: ['inserted_at']
+    tests:
+      - unique:
+          column_name: codgeo || '-' || annee || '-' || codeclasse
+    columns:
+    - name: codgeo
+      data_type: varchar(5)
+      tests:
+        - not_null
+    - name: annee
+      data_type: date
+      tests:
+        - not_null
+    - name: codeclasse
+      data_type: varchar(2)
+      tests:
+        - not_null
+    - name: codeunitedecompte
+      data_type: varchar(2)
+      tests:
+        - not_null
+    - name: faits
+      data_type: int
+    - name: tauxpourmille
+      data_type: double
+    - name: pop
+      data_type: int
+    - name: millpop
+      data_type: date
+      tests:
+        - not_null
+    - name: log
+      data_type: double
+    - name: milllog
+      data_type: date
+      tests:
+        - not_null
