@@ -55,7 +55,7 @@ with
             get_dim_unitedecompte
             on classe_lib_to_classe_code.unitedecompte = get_dim_unitedecompte.libelle
     ),
-    add_technical_timestamps as (
+    add_timestamp as (
         select
             *,
             current_timestamp::timestamp as inserted_at,
@@ -63,4 +63,4 @@ with
         from unitedecompte_lib_to_unitedecompte_code
     )
 select *
-from add_technical_timestamps
+from add_timestamp

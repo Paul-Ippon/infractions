@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: 310_320_DIM_EPCI
+  - name: 310_420_DIM_EPCI
     config:
       materialized: incremental
       database: "{{ target.database }}"

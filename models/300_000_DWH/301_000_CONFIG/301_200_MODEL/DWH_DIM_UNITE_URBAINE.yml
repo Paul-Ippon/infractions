@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: 310_330_DIM_UNITE_URBAINE
+  - name: 310_430_DIM_UNITE_URBAINE
     config:
       materialized: incremental
       database: "{{ target.database }}"
