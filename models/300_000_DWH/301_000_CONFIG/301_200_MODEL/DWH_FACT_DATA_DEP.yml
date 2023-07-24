@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: 320_120_FACT_DATA_DEP
+    config:
+      materialized: incremental
+      database: "{{ target.database }}"
+      schema: "DWH"
+      alias: FACT_DATA_DATA_DEP
+      unique_key: [codeclasse, annee, codedepartement]
+      incremental_strategy: merge
+      merge_exclude_columns: ["inserted_at"]
+    tests:
+      - unique:
+          column_name: codeclasse || '-' || annee || '-' || codedepartement
+    columns:
+      - name: codeclasse
+        data_type: varchar(2)
+        tests:
+          - not_null
+      - name: annee
+        data_type: date
+        tests:
+          - not_null
+      - name: codedepartement
+        data_type: varchar(3)
+        tests:
+          - not_null
+      - name: coderegion
+        data_type: varchar(2)
+        tests:
+          - not_null
+      - name: codeunitedecompte
+        data_type: varchar(2)
+        tests:
+          - not_null
+      - name: millpop
+        data_type: date
+        tests:
+          - not_null
+      - name: milllog
+        data_type: date
+        tests:
+          - not_null
+      - name: faits
+        data_type: double
+      - name: log
+        data_type: double
+      - name: tauxpourmille
+        data_type: double
