@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: 310_340_DIM_AIRE_ATTRACTIVITE
+  - name: 310_440_DIM_AIRE_ATTRACTIVITE
     config:
       materialized: incremental
       database: "{{ target.database }}"
