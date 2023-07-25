@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: DSA_LIBELLES_SUPRACOMMUNAUX
+    database: "{{ target.database }}"
+    schema: "{{ target.schema }}_DSA"
+    loader: S3
+    tables:
+      - name: LIBELLES_SUPRACOMMUNAUX
+        external:
+          location: "@{{ target.database }}.{{ target.schema }}_DSA.STAGE_S3_INFRACTIONS"
+          file_format: "{{ target.database }}.{{ target.schema }}_DSA.CSV_INFRACTIONS"
+          pattern: "infractions/LIBELLES_SUPRACOMMUNAUX.csv"
+        columns:
+          - name: NIVGEO
+            data_type: varchar(255)
+          - name: CODGEO
+            data_type: varchar(255)
+          - name: LIBGEO
+            data_type: varchar(255)
+          - name: NB_COM
+            data_type: varchar(255)

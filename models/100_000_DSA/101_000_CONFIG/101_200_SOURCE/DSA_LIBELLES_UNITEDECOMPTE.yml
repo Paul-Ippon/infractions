@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: DSA_LIBELLES_UNITEDECOMPTE
+    database: "{{ target.database }}"
+    schema: "{{ target.schema }}_DSA"
+    loader: S3
+    tables:
+      - name: LIBELLES_UNITEDECOMPTE
+        external:
+          location: "@{{ target.database }}.{{ target.schema }}_DSA.STAGE_S3_INFRACTIONS"
+          file_format: "{{ target.database }}.{{ target.schema }}_DSA.CSV_INFRACTIONS"
+          pattern: "infractions/LIBELLES_UNITEDECOMPTE.csv"
+        columns:
+          - name: CODE
+            data_type: varchar(255)
+          - name: LIBELLE
+            data_type: varchar(255)
