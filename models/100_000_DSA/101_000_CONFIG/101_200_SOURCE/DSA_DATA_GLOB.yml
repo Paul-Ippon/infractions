@@ -1,0 +1,41 @@
+version: 2
+
+sources:
+  - name: DSA_DATA_GLOB
+    database: "{{ target.database }}"
+    schema: "{{ target.schema }}_DSA"
+    loader: S3
+    tables:
+      - name: DATA_GLOB
+        ext_full_refresh: true
+        external:
+          location: "@{{ target.database }}.{{ target.schema }}_DSA.STAGE_S3_INFRACTIONS"
+          file_format: "{{ target.database }}.{{ target.schema }}_DSA.CSV_INFRACTIONS"
+          pattern: "infractions/DATA_GLOB_\\\\d{2}.csv"
+        columns:
+          - name: CODGEO
+            data_type: varchar(255)
+          - name: ANNEE
+            data_type: varchar(255)
+          - name: CLASSE
+            data_type: varchar(255)
+          - name: UNITEDECOMPTE
+            data_type: varchar(255)
+          - name: VALEURPUBLIEE
+            data_type: varchar(255)
+          - name: FAITS
+            data_type: varchar(255)
+          - name: TAUXPOURMILLE
+            data_type: varchar(255)
+          - name: COMPLEMENTINFOVAL
+            data_type: varchar(255)
+          - name: COMPLEMENTINFOTAUX
+            data_type: varchar(255)
+          - name: POP
+            data_type: varchar(255)
+          - name: MILLPOP
+            data_type: varchar(255)
+          - name: LOG
+            data_type: varchar(255)
+          - name: MILLLOG
+            data_type: varchar(255)

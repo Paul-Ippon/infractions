@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: DSA_CODE_LIBELLES
+    database: "{{ target.database }}"
+    schema: "{{ target.schema }}_DSA"
+    loader: S3
+    tables:
+      - name: CODE_LIBELLES
+        ext_full_refresh: true
+        external:
+          location: "@{{ target.database }}.{{ target.schema }}_DSA.STAGE_S3_INFRACTIONS"
+          file_format: "{{ target.database }}.{{ target.schema }}_DSA.CSV_INFRACTIONS"
+          pattern: "infractions/CODE_LIBELLES.csv"
+        columns:
+          - name: VARIABLE
+            data_type: varchar(255)
+          - name: CODE
+            data_type: varchar(255)
+          - name: LIBELLE
+            data_type: varchar(255)
