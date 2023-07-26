@@ -13,7 +13,7 @@ sources:
           file_format: "{{ target.database }}.{{ target.schema }}_DSA.CSV_INFRACTIONS"
           pattern: "infractions/DATA_DEP_\\\\d{2}.csv"
         columns:
-          - name: CODGEO
+          - name: CLASSE
             data_type: varchar(255)
           - name: ANNEE
             data_type: varchar(255)
