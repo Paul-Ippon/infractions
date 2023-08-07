@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: 290_020_ERR_DATA_DEP
+    config:
+      materialized: view
+      database: "{{ target.database }}"
+      schema: "ODS"
+      alias: ODS_ERR_DATA_DEP
+    columns:
+      - name: logtime
+        data_type: datetime
+      - name: targetschematable
+        data_type: varchar(255)
+      - name: data
+        data_type: variant

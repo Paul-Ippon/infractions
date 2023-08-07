@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: 210_200_LOAD_DATA_DEP
+  - name: 210_020_LOAD_DATA_DEP
     config:
       materialized: table
       database: "{{ target.database }}"

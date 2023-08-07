@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: 210_700_LOAD_LIBELLES_UNITEDECOMPTE
+  - name: 210_070_LOAD_LIBELLES_UNITEDECOMPTE
     config:
       materialized: table
       database: "{{ target.database }}"
