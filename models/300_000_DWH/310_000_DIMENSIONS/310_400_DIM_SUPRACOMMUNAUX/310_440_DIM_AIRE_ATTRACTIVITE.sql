@@ -5,8 +5,8 @@ with
             aav2020,
             taav2017,
             tdaav2017,
-            current_timestamp::timestamp as inserted_at,
-            current_timestamp::timestamp as updated_at
+            '{{ get_now() }}'::timestamp as inserted_at,
+            '{{ get_now() }}'::timestamp as updated_at
         from get_source
     )
 select *

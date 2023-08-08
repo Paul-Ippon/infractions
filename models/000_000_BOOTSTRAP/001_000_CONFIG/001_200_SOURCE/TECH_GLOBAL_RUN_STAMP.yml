@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: TECH_GLOBAL_RUN_STAMP
+    database: "{{ target.database }}"
+    schema: "{{ target.schema }}_TECH"
+    tables:
+      - name: GLOBAL_RUN_STAMP
+        columns:
+          - name: GLOBALRUNUUID
+            data_type: varchar(32)
+          - name: GLOBALRUNSTARTEDAT
+            data_type: timestamp

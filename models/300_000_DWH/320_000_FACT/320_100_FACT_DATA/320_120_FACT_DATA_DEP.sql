@@ -56,8 +56,8 @@ with
     add_timestamp as (
         select
             *,
-            current_timestamp::timestamp as inserted_at,
-            current_timestamp::timestamp as updated_at
+            '{{ get_now() }}'::timestamp as inserted_at,
+            '{{ get_now() }}'::timestamp as updated_at
         from unitedecompte_lib_to_unitedecompte_code
     )
 select *

@@ -13,6 +13,8 @@
                     {% endfor %}
             )
             select
+                (select globalrunuuid from {{source("TECH_GLOBAL_RUN_STAMP","GLOBAL_RUN_STAMP")}}) as globalrunuuid,
+                (select globalrunstartedat from {{source("TECH_GLOBAL_RUN_STAMP","GLOBAL_RUN_STAMP")}}) as globalrunstartedat,
                 '{{ invocation_id }}' as runuuid,
                 '{{ run_started_at.astimezone(modules.pytz.timezone("Europe/Paris")).strftime("%Y-%m-%d %H:%M:%S.%f") }}'::timestamp as runstartedat,
                 '{{ modules.datetime.datetime.now().astimezone(modules.pytz.timezone("Europe/Paris")).strftime("%Y-%m-%d %H:%M:%S.%f")  }}'::timestamp as logtimeutc,
