@@ -1,5 +1,5 @@
 with
-    get_source as (select * from {{ ref("210_020_STG_DATA_DEP") }}),
+    get_source as (select * from {{ ref("210_021_DATA_DEP") }}),
     get_dim_classe as (select * from {{ ref("DIM_MISC_LIB_INDICATEURS_SCD") }}),
     get_dim_unitedecompte as (
         select * from {{ ref("DIM_MISC_LIB_UNITEDECOMPTE_SCD") }}
