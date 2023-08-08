@@ -1,54 +1,32 @@
 version: 2
 
 models:
-  - name: 210_020_LOAD_DATA_DEP
+  - name: 210_020_STG_DATA_DEP
     config:
-      materialized: table
+      materialized: view
       database: "{{ target.database }}"
       schema: "ODS"
-      alias: DATA_DEP
+      alias: STG_DATA_DEP
     columns:
       - name: classe
         data_type: varchar(255)
-        tests:
-          - not_null
       - name: annee
         data_type: varchar(2)
-        tests:
-          - not_null
       - name: codedepartement
         data_type: varchar(3)
-        tests:
-          - not_null
       - name: coderegion
         data_type: varchar(2)
-        tests:
-          - not_null
       - name: unitedecompte
         data_type: varchar(255)
-        tests:
-          - not_null
       - name: millpop
         data_type: varchar(2)
-        tests:
-          - not_null
       - name: milllog
         data_type: varchar(2)
-        tests:
-          - not_null
       - name: faits
         data_type: int
-        tests:
-          - not_null
       - name: pop
         data_type: int
-        tests:
-          - not_null
       - name: log
         data_type: double
-        tests:
-          - not_null
       - name: tauxpourmille
         data_type: double
-        tests:
-          - not_null

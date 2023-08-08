@@ -4,20 +4,14 @@
     {%- if node.config.schema == "ODS" 
     and node.config.materialized == "view" 
     and "ERR" in node.name -%}
-        {%- do nodes.append(ref(node.name)) -%}
+        {%- do nodes.append(node) -%}
     {%- endif -%}
 {% endfor %}
 
-{%- for node in nodes %}
--- depends_on: {{ node }}
-{% endfor %}
-
-
-{%- for node in nodes %}
+{%- for node in nodes -%}
     select *
-    from {{ node }}
-    {% if not loop.last %}
+    from {{ node.database }}.{{ node.schema }}.{{ node.alias }}
+    {%- if not loop.last %}
         union all
-    {% endif %}
+    {%- endif %}
 {% endfor %}
-

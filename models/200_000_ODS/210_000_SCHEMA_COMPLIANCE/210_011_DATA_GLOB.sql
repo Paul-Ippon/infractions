@@ -1,4 +1,4 @@
-{%- set source_model = "210_010_LOAD_DATA_GLOB" -%}
+{%- set source_model = "210_010_STG_DATA_GLOB" -%}
 {%- set columns_in_relation = adapter.get_columns_in_relation(ref(source_model)) -%}
 
 

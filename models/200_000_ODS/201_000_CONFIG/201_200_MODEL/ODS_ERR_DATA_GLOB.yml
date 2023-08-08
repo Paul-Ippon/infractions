@@ -1,12 +1,12 @@
 version: 2
 
 models:
-  - name: 280_020_ERR_DATA_DEP
+  - name: 280_010_ERR_DATA_GLOB
     config:
       materialized: view
       database: "{{ target.database }}"
       schema: "ODS"
-      alias: ODS_ERR_DATA_DEP
+      alias: ODS_ERR_DATA_GLOB
     columns:
       - name: runuuid
         data_type: varchar(32)

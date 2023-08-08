@@ -6,7 +6,7 @@ models:
       materialized: incremental
       database: "{{ target.database }}"
       schema: "DWH"
-      alias: FACT_DATA_DATA_DEP
+      alias: FACT_DATA_DEP
       unique_key: [codeclasse, annee, codedepartement]
       incremental_strategy: merge
       merge_exclude_columns: ["inserted_at"]

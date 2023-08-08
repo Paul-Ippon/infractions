@@ -38,50 +38,14 @@ with
     ),
     check_type as (
         select
+            iff(len(codgeo) > 5, '{{ var("err_value") }}', codgeo) as codgeo,
+            iff(len(annee) > 2, '{{ var("err_value") }}', annee) as annee,
+            iff(len(classe) > 255, '{{ var("err_value") }}', classe) as classe,
             iff(
-                codgeo is null,
-                codgeo,
-                iff(
-                    try_cast(codgeo as varchar(5)) is not null,
-                    codgeo,
-                    '{{ var("err_value") }}'
-                )
-            ) as codgeo,
-            iff(
-                annee is null,
-                annee,
-                iff(
-                    try_cast(annee as varchar(2)) is not null,
-                    annee,
-                    '{{ var("err_value") }}'
-                )
-            ) as annee,
-            iff(
-                classe is null,
-                classe,
-                iff(
-                    try_cast(classe as varchar(255)) is not null,
-                    classe,
-                    '{{ var("err_value") }}'
-                )
-            ) as classe,
-            iff(
-                unitedecompte is null,
-                unitedecompte,
-                iff(
-                    try_cast(unitedecompte as varchar(255)) is not null,
-                    unitedecompte,
-                    '{{ var("err_value") }}'
-                )
+                len(valeurpubliee) > 255, '{{ var("err_value") }}', valeurpubliee
             ) as valeurpubliee,
             iff(
-                valeurpubliee is null,
-                valeurpubliee,
-                iff(
-                    try_cast(valeurpubliee as varchar(5)) is not null,
-                    valeurpubliee,
-                    '{{ var("err_value") }}'
-                )
+                len(unitedecompte) > 5, '{{ var("err_value") }}', unitedecompte
             ) as unitedecompte,
             iff(
                 faits is null,
@@ -143,7 +107,7 @@ with
                     '{{ var("err_value") }}'
                 )
             ) as milllog
-        from replace_comma
+        from replace_na
     )
 select *
 from check_type
