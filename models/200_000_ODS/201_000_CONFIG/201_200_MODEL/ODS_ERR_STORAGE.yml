@@ -9,6 +9,10 @@ models:
       schema: "ODS"
       alias: ERR_STORAGE
     columns:
+      - name: globalrunuuid
+        data_type: varchar(32)
+      - name: globalrunstartedat
+        data_type: timestamp
       - name: runuuid
         data_type: varchar(32)
       - name: runstartedat

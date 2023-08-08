@@ -8,6 +8,10 @@ models:
       schema: "ODS"
       alias: ODS_ERR_DATA_DEP
     columns:
+      - name: globalrunuuid
+        data_type: varchar(32)
+      - name: globalrunstartedat
+        data_type: timestamp
       - name: runuuid
         data_type: varchar(32)
       - name: runstartedat

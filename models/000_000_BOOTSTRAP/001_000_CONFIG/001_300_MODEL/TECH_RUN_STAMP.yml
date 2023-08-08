@@ -1,9 +1,0 @@
-version: 2
-
-models:
-  - name: 010_010_RUN_STAMP
-    config:
-      materialized: table
-      database: "{{ target.database }}"
-      schema: "TECH"
-      alias: RUN_STAMP
