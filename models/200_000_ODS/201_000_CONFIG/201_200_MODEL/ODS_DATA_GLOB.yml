@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: 210_100_LOAD_DATA_GLOB
+  - name: 210_011_DATA_GLOB
     config:
       materialized: table
       database: "{{ target.database }}"

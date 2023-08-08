@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: 290_010_ERR_STORAGE
+    config:
+      materialized: incremental
+      incremental_strategy: append
+      database: "{{ target.database }}"
+      schema: "ODS"
+      alias: ERR_STORAGE
+    columns:
+      - name: runuuid
+        data_type: varchar(32)
+      - name: runstartedat
+        data_type: timestamp
+      - name: logtime
+        data_type: timestamp
+      - name: model
+        data_type: varchar(32)
+      - name: data
+        data_type: variant

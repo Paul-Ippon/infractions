@@ -1,7 +1,5 @@
-{{ config(alias="FACT_DATA_GLOB") }}
-
 with
-    get_source as (select * from {{ ref("210_100_LOAD_DATA_GLOB") }}),
+    get_source as (select * from {{ ref("210_011_DATA_GLOB") }}),
     get_dim_classe as (select * from {{ ref("DIM_MISC_LIB_INDICATEURS_SCD") }}),
     get_dim_unitedecompte as (
         select * from {{ ref("DIM_MISC_LIB_UNITEDECOMPTE_SCD") }}

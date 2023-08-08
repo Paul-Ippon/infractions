@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: 210_600_LOAD_LIBELLES_INDICATEURS
+  - name: 210_060_LOAD_LIBELLES_INDICATEURS
     config:
       materialized: table
       database: "{{ target.database }}"

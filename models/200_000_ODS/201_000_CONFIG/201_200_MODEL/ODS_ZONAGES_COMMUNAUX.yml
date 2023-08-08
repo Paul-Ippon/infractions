@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: 210_300_LOAD_ZONAGES_SUPRACOMMUNAUX
+  - name: 210_030_LOAD_ZONAGES_SUPRACOMMUNAUX
     config:
       materialized: table
       database: "{{ target.database }}"

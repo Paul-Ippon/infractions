@@ -1,19 +1,20 @@
+{%- set source_model = "210_020_STG_DATA_DEP" -%}
+{%- set columns_in_relation = adapter.get_columns_in_relation(ref(source_model)) -%}
+
+
 with
-    get_source as (select * from {{ source("DSA_DATA_DEP", "DATA_DEP") }}),
-    replace_comma as (
-        select
-            classe,
-            annee,
-            codedepartement,
-            coderegion,
-            unitedecompte,
-            millpop,
-            milllog,
-            faits,
-            pop,
-            replace(log, ',', '.') as log,
-            replace(tauxpourmille, ',', '.') as tauxpourmille
+    get_source as (select * from {{ ref(source_model) }}),
+    get_valid_data as (
+        select *
         from get_source
+        where
+            {% for column in columns_in_relation -%}
+                (
+                    {{ column.name ~ "::VARCHAR" }} != '{{ var("err_value") }}'
+                    or {{ column.name }} is null
+                )
+                {%- if not loop.last %} and {% endif -%}
+            {% endfor %}
     ),
     cast_data as (
         select
@@ -28,7 +29,7 @@ with
             pop::int as pop,
             log::double as log,
             tauxpourmille::double as tauxpourmille
-        from replace_comma
+        from get_valid_data
     )
 select *
 from cast_data
