@@ -24,7 +24,7 @@ with
             coderegion::varchar(2) as coderegion,
             unitedecompte::varchar(255) as unitedecompte,
             millpop::varchar(2) as millpop,
-            milllog::varchar(2) as milllop,
+            milllog::varchar(2) as milllog,
             faits::int as faits,
             pop::int as pop,
             log::double as log,
