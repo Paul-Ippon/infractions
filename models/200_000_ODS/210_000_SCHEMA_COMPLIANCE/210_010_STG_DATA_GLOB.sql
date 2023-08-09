@@ -42,10 +42,10 @@ with
             iff(len(annee) > 2, '{{ var("err_value") }}', annee) as annee,
             iff(len(classe) > 255, '{{ var("err_value") }}', classe) as classe,
             iff(
-                len(valeurpubliee) > 255, '{{ var("err_value") }}', valeurpubliee
+                len(valeurpubliee) > 5, '{{ var("err_value") }}', valeurpubliee
             ) as valeurpubliee,
             iff(
-                len(unitedecompte) > 5, '{{ var("err_value") }}', unitedecompte
+                len(unitedecompte) > 255, '{{ var("err_value") }}', unitedecompte
             ) as unitedecompte,
             iff(
                 faits is null,
