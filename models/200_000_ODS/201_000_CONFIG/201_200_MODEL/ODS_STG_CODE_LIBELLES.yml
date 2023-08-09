@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: 210_051_CODE_LIBELLES
+    config:
+      materialized: table
+      database: "{{ target.database }}"
+      schema: "ODS"
+      alias: CODE_LIBELLES
+    columns:
+      - name: variable
+        data_type: varchar(255)
+      - name: code
+        data_type: varchar(255)
+      - name: libelle
+        data_type: varchar(255)

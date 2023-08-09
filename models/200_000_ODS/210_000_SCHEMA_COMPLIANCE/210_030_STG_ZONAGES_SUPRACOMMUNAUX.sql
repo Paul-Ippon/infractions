@@ -48,6 +48,7 @@ with
                 '{{ var("err_value") }}',
                 typo_degre_densite
             ) as typo_degre_densite
+        from get_source
     )
 select *
 from check_type
