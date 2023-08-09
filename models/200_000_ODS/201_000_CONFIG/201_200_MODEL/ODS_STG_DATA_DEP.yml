@@ -11,22 +11,22 @@ models:
       - name: classe
         data_type: varchar(255)
       - name: annee
-        data_type: varchar(2)
+        data_type: varchar(255)
       - name: codedepartement
-        data_type: varchar(3)
+        data_type: varchar(255)
       - name: coderegion
-        data_type: varchar(2)
+        data_type: varchar(255)
       - name: unitedecompte
         data_type: varchar(255)
       - name: millpop
-        data_type: varchar(2)
+        data_type: varchar(255)
       - name: milllog
-        data_type: varchar(2)
+        data_type: varchar(255)
       - name: faits
-        data_type: int
+        data_type: varchar(255)
       - name: pop
-        data_type: int
+        data_type: varchar(255)
       - name: log
-        data_type: double
+        data_type: varchar(255)
       - name: tauxpourmille
-        data_type: double
+        data_type: varchar(255)

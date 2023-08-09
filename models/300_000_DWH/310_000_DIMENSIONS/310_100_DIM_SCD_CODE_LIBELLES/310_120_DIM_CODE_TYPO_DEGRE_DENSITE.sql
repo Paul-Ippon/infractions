@@ -1,5 +1,5 @@
 with
-    get_source as (select * from {{ ref("210_050_LOAD_CODE_LIBELLES") }}),
+    get_source as (select * from {{ ref("210_051_CODE_LIBELLES") }}),
     split_data as (
         select distinct
             variable,

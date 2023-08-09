@@ -13,29 +13,29 @@ sources:
           file_format: "{{ target.database }}.{{ target.schema }}_DSA.CSV_INFRACTIONS"
           pattern: "infractions/DATA_GLOB_\\\\d{2}.csv"
         columns:
-          - name: CODGEO
+          - name: codgeo
             data_type: varchar(255)
-          - name: ANNEE
+          - name: annee
             data_type: varchar(255)
-          - name: CLASSE
+          - name: classe
             data_type: varchar(255)
-          - name: UNITEDECOMPTE
+          - name: unitedecompte
             data_type: varchar(255)
-          - name: VALEURPUBLIEE
+          - name: valeurpubliee
             data_type: varchar(255)
-          - name: FAITS
+          - name: faits
             data_type: varchar(255)
-          - name: TAUXPOURMILLE
+          - name: tauxpourmille
             data_type: varchar(255)
-          - name: COMPLEMENTINFOVAL
+          - name: complementinfoval
             data_type: varchar(255)
-          - name: COMPLEMENTINFOTAUX
+          - name: complementinfotaux
             data_type: varchar(255)
-          - name: POP
+          - name: pop
             data_type: varchar(255)
-          - name: MILLPOP
+          - name: millpop
             data_type: varchar(255)
-          - name: LOG
+          - name: log
             data_type: varchar(255)
-          - name: MILLLOG
+          - name: milllog
             data_type: varchar(255)

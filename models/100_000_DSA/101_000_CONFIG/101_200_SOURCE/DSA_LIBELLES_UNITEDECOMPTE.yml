@@ -12,7 +12,7 @@ sources:
           file_format: "{{ target.database }}.{{ target.schema }}_DSA.CSV_INFRACTIONS"
           pattern: "infractions/LIBELLES_UNITEDECOMPTE.csv"
         columns:
-          - name: CODE
+          - name: code
             data_type: varchar(255)
-          - name: LIBELLE
+          - name: libelle
             data_type: varchar(255)

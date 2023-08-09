@@ -13,25 +13,25 @@ sources:
           file_format: "{{ target.database }}.{{ target.schema }}_DSA.CSV_INFRACTIONS"
           pattern: "infractions/DATA_DEP_\\\\d{2}.csv"
         columns:
-          - name: CLASSE
+          - name: classe
             data_type: varchar(255)
-          - name: ANNEE
+          - name: annee
             data_type: varchar(255)
-          - name: CODEDEPARTEMENT
+          - name: codedepartement
             data_type: varchar(255)
-          - name: CODEREGION
+          - name: coderegion
             data_type: varchar(255)
-          - name: UNITEDECOMPTE
+          - name: unitedecompte
             data_type: varchar(255)
-          - name: MILLPOP
+          - name: millpop
             data_type: varchar(255)
-          - name: MILLLOG
+          - name: milllog
             data_type: varchar(255)
-          - name: FAITS
+          - name: faits
             data_type: varchar(255)
-          - name: POP
+          - name: pop
             data_type: varchar(255)
-          - name: LOG
+          - name: log
             data_type: varchar(255)
-          - name: TAUXPOURMILLE
+          - name: tauxpourmille
             data_type: varchar(255)

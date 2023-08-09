@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: 210_060_STG_LIBELLES_INDICATEURS
+    config:
+      materialized: view
+      database: "{{ target.database }}"
+      schema: "ODS"
+      alias: STG_LIBELLES_INDICATEURS
+    columns:
+      - name: code
+        data_type: varchar(255)
+      - name: libelle
+        data_type: varchar(255)
