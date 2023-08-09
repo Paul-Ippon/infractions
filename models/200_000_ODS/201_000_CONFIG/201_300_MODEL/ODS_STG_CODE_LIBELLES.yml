@@ -3,7 +3,7 @@ version: 2
 models:
   - name: 210_050_STG_CODE_LIBELLES
     config:
-      materialized: table
+      materialized: view
       database: "{{ target.database }}"
       schema: "ODS"
       alias: STG_CODE_LIBELLES
