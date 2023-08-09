@@ -47,7 +47,7 @@ with
                 len(typo_degre_densite) > 255,
                 '{{ var("err_value") }}',
                 typo_degre_densite
-            ) as typo_degre_densite,
+            ) as typo_degre_densite
     )
 select *
 from check_type
