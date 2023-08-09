@@ -12,11 +12,11 @@ sources:
           file_format: "{{ target.database }}.{{ target.schema }}_DSA.CSV_INFRACTIONS"
           pattern: "infractions/LIBELLES_SUPRACOMMUNAUX.csv"
         columns:
-          - name: NIVGEO
-            data_type: varchar(255)
-          - name: CODGEO
-            data_type: varchar(255)
-          - name: LIBGEO
-            data_type: varchar(255)
-          - name: NB_COM
-            data_type: varchar(255)
+          - name: nivgeo
+            data_type: varchar(65535)
+          - name: codgeo
+            data_type: varchar(65535)
+          - name: libgeo
+            data_type: varchar(65535)
+          - name: nb_com
+            data_type: varchar(65535)

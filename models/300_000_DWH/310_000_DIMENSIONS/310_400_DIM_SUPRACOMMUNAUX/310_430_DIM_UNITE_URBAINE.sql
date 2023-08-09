@@ -1,5 +1,5 @@
 with
-    get_source as (select * from {{ ref("210_030_LOAD_ZONAGES_SUPRACOMMUNAUX") }}),
+    get_source as (select * from {{ ref("210_031_ZONAGES_SUPRACOMMUNAUX") }}),
     split_data as (
         select distinct
             uu2020,

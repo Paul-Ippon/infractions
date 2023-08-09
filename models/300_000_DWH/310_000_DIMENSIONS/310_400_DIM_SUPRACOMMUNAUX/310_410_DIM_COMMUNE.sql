@@ -1,5 +1,5 @@
 with
-    get_source as (select * from {{ ref("210_030_LOAD_ZONAGES_SUPRACOMMUNAUX") }}),
+    get_source as (select * from {{ ref("210_031_ZONAGES_SUPRACOMMUNAUX") }}),
     get_uustatut as (
         select * from {{ ref("DIM_CODE_UUSTATUT_SCD") }} where dbt_valid_to is null
     ),

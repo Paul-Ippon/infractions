@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: 210_040_LOAD_LIBELLES_SUPRACOMMUNAUX
+  - name: 210_041_LIBELLES_SUPRACOMMUNAUX
     config:
       materialized: table
       database: "{{ target.database }}"

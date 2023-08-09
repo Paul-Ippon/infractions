@@ -9,24 +9,24 @@ models:
       alias: STG_DATA_DEP
     columns:
       - name: classe
-        data_type: varchar(255)
+        data_type: varchar(65535)
       - name: annee
-        data_type: varchar(2)
+        data_type: varchar(65535)
       - name: codedepartement
-        data_type: varchar(3)
+        data_type: varchar(65535)
       - name: coderegion
-        data_type: varchar(2)
+        data_type: varchar(65535)
       - name: unitedecompte
-        data_type: varchar(255)
+        data_type: varchar(65535)
       - name: millpop
-        data_type: varchar(2)
+        data_type: varchar(65535)
       - name: milllog
-        data_type: varchar(2)
+        data_type: varchar(65535)
       - name: faits
-        data_type: int
+        data_type: varchar(65535)
       - name: pop
-        data_type: int
+        data_type: varchar(65535)
       - name: log
-        data_type: double
+        data_type: varchar(65535)
       - name: tauxpourmille
-        data_type: double
+        data_type: varchar(65535)

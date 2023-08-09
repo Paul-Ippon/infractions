@@ -12,41 +12,41 @@ sources:
           file_format: "{{ target.database }}.{{ target.schema }}_DSA.CSV_INFRACTIONS"
           pattern: "infractions/ZONAGES_SUPRACOMMUNAUX.csv"
         columns:
-          - name: CODGEO
-            data_type: varchar(255)
-          - name: NOM_DE_LA_COMMUNE
-            data_type: varchar(255)
-          - name: CODE_DEPARTEMENT
-            data_type: varchar(255)
-          - name: CODE_REGION
-            data_type: varchar(255)
-          - name: CODE_ARRONDISSEMENT
-            data_type: varchar(255)
-          - name: CODE_CANTON
-            data_type: varchar(255)
-          - name: CODE_EPCI
-            data_type: varchar(255)
-          - name: NATURE_EPCI
-            data_type: varchar(255)
-          - name: ZE2020
-            data_type: varchar(255)
-          - name: UU2020
-            data_type: varchar(255)
-          - name: TUU2017
-            data_type: varchar(255)
-          - name: TDUU2017
-            data_type: varchar(255)
-          - name: UUSTATUT2017
-            data_type: varchar(255)
-          - name: AAV2020
-            data_type: varchar(255)
-          - name: TAAV2017
-            data_type: varchar(255)
-          - name: TDAAV2017
-            data_type: varchar(255)
-          - name: CATEAAV2020
-            data_type: varchar(255)
-          - name: BV2012
-            data_type: varchar(255)
-          - name: TYPO_DEGRE_DENSITE
-            data_type: varchar(255)
+          - name: codgeo
+            data_type: varchar(65535)
+          - name: nom_de_la_commune
+            data_type: varchar(65535)
+          - name: code_departement
+            data_type: varchar(65535)
+          - name: code_region
+            data_type: varchar(65535)
+          - name: code_arrondissement
+            data_type: varchar(65535)
+          - name: code_canton
+            data_type: varchar(65535)
+          - name: code_epci
+            data_type: varchar(65535)
+          - name: nature_epci
+            data_type: varchar(65535)
+          - name: ze2020
+            data_type: varchar(65535)
+          - name: uu2020
+            data_type: varchar(65535)
+          - name: tuu2017
+            data_type: varchar(65535)
+          - name: tduu2017
+            data_type: varchar(65535)
+          - name: uustatut2017
+            data_type: varchar(65535)
+          - name: aav2020
+            data_type: varchar(65535)
+          - name: taav2017
+            data_type: varchar(65535)
+          - name: tdaav2017
+            data_type: varchar(65535)
+          - name: cateaav2020
+            data_type: varchar(65535)
+          - name: bv2012
+            data_type: varchar(65535)
+          - name: typo_degre_densite
+            data_type: varchar(65535)

@@ -13,9 +13,9 @@ sources:
           file_format: "{{ target.database }}.{{ target.schema }}_DSA.CSV_INFRACTIONS"
           pattern: "infractions/CODE_LIBELLES.csv"
         columns:
-          - name: VARIABLE
-            data_type: varchar(255)
-          - name: CODE
-            data_type: varchar(255)
-          - name: LIBELLE
-            data_type: varchar(255)
+          - name: variable
+            data_type: varchar(65535)
+          - name: code
+            data_type: varchar(65535)
+          - name: libelle
+            data_type: varchar(65535)

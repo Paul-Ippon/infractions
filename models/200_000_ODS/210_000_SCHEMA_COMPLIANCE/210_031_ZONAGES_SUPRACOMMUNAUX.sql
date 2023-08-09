@@ -1,7 +1,20 @@
+{%- set source_model = "210_030_STG_ZONAGES_SUPRACOMMUNAUX" -%}
+{%- set columns_in_relation = adapter.get_columns_in_relation(ref(source_model)) -%}
+
+
 with
-    get_source as (
+    get_source as (select * from {{ ref(source_model) }}),
+    get_valid_data as (
         select *
-        from {{ source("DSA_ZONAGES_SUPRACOMMUNAUX", "ZONAGES_SUPRACOMMUNAUX") }}
+        from get_source
+        where
+            {% for column in columns_in_relation -%}
+                (
+                    {{ column.name ~ "::VARCHAR" }} != '{{ var("err_value") }}'
+                    or {{ column.name }} is null
+                )
+                {%- if not loop.last %} and {% endif -%}
+            {% endfor %}
     ),
     cast_data as (
         select
@@ -24,7 +37,7 @@ with
             cateaav2020::varchar(255) as cateaav2020,
             bv2012::varchar(5) as bv2012,
             typo_degre_densite::varchar(255) as typo_degre_densite
-        from get_source
+        from get_valid_data
     )
 select *
 from cast_data
