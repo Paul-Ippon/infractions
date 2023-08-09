@@ -9,10 +9,10 @@ models:
       alias: STG_LIBELLES_SUPRACOMMUNAUX
     columns:
       - name: nivgeo
-        data_type: varchar(255)
+        data_type: varchar(65535)
       - name: codgeo
-        data_type: varchar(255)
+        data_type: varchar(65535)
       - name: libgeo
-        data_type: varchar(255)
+        data_type: varchar(65535)
       - name: nb_com
-        data_type: varchar(255)
+        data_type: varchar(65535)

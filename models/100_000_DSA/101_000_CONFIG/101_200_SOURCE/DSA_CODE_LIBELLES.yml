@@ -14,8 +14,8 @@ sources:
           pattern: "infractions/CODE_LIBELLES.csv"
         columns:
           - name: variable
-            data_type: varchar(255)
+            data_type: varchar(65535)
           - name: code
-            data_type: varchar(255)
+            data_type: varchar(65535)
           - name: libelle
-            data_type: varchar(255)
+            data_type: varchar(65535)

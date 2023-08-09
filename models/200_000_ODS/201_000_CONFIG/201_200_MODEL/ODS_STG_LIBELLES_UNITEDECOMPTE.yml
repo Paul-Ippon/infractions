@@ -9,6 +9,6 @@ models:
       alias: STG_LIBELLES_UNITEDECOMPTE
     columns:
       - name: code
-        data_type: varchar(255)
+        data_type: varchar(65535)
       - name: libelle
-        data_type: varchar(255)
+        data_type: varchar(65535)

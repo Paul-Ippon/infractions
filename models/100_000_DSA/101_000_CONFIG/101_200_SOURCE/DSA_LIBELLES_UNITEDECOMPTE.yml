@@ -13,6 +13,6 @@ sources:
           pattern: "infractions/LIBELLES_UNITEDECOMPTE.csv"
         columns:
           - name: code
-            data_type: varchar(255)
+            data_type: varchar(65535)
           - name: libelle
-            data_type: varchar(255)
+            data_type: varchar(65535)
