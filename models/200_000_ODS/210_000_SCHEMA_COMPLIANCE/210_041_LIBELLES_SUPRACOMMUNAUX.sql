@@ -22,7 +22,7 @@ with
             codgeo::varchar(9) as codgeo,
             libgeo::varchar(255) as libgeo,
             nb_com::smallint as nb_com
-        from get_source
+        from get_valid_data
     )
 select *
 from cast_data

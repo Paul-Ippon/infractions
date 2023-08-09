@@ -37,7 +37,7 @@ with
             cateaav2020::varchar(255) as cateaav2020,
             bv2012::varchar(5) as bv2012,
             typo_degre_densite::varchar(255) as typo_degre_densite
-        from get_source
+        from get_valid_data
     )
 select *
 from cast_data

@@ -18,7 +18,7 @@ with
     ),
     cast_data as (
         select code::varchar(2) as code, libelle::varchar(255) as libelle
-        from get_source
+        from get_valid_data
     )
 select *
 from cast_data
