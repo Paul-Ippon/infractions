@@ -3,12 +3,12 @@ with
         select *
         from {{ source("DSA_CODE_LIBELLES", "CODE_LIBELLES") }}
     ),
-    cast_data as (
+    check_type as (
         select
-            variable::varchar(32) as variable,
-            code::varchar(2) as code,
-            libelle::varchar(255) as libelle
+            iff(len(variable) > 32, '{{ var("err_value") }}', variable) as variable,
+            iff(len(code) > 2, '{{ var("err_value") }}', code) as code,
+            iff(len(libelle) > 255, '{{ var("err_value") }}', libelle) as libelle
         from get_source
     )
 select *
-from cast_data
+from check_type

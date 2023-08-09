@@ -3,13 +3,21 @@ with
         select *
         from {{ source("DSA_LIBELLES_SUPRACOMMUNAUX", "LIBELLES_SUPRACOMMUNAUX") }}
     ),
-    cast_data as (
+    check_type as (
         select
-            nivgeo::varchar(7) as nivgeo,
-            codgeo::varchar(9) as codgeo,
-            libgeo::varchar(255) as libgeo,
-            nb_com::smallint as nb_com
+            iff(len(nivgeo) > 7, '{{ var("err_value") }}', nivgeo) as nivgeo,
+            iff(len(codgeo) > 9, '{{ var("err_value") }}', codgeo) as codgeo,
+            iff(len(libgeo) > 255, '{{ var("err_value") }}', libgeo) as libgeo,
+            iff(
+                nb_com is null,
+                nb_com,
+                iff(
+                    try_cast(nb_com as smallint) is not null,
+                    nb_com,
+                    '{{ var("err_value") }}'
+                )
+            ) as nb_com
         from get_source
     )
 select *
-from cast_data
+from check_type

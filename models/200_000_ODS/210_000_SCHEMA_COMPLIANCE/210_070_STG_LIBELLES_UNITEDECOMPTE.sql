@@ -3,11 +3,11 @@ with
         select *
         from {{ source("DSA_LIBELLES_UNITEDECOMPTE", "LIBELLES_UNITEDECOMPTE") }}
     ),
-    cast_data as (
         select
-            code::varchar(2) as code,
-            libelle::varchar(255) as libelle
+            iff(len(code) > 2, '{{ var("err_value") }}', code) as code,
+            iff(len(libelle) > 255, '{{ var("err_value") }}', libelle) as libelle
         from get_source
     )
 select *
-from cast_data
+from check_type
+
