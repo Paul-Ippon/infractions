@@ -6,7 +6,7 @@ with
             code,
             libelle
         from get_source
-        where variable = 'TDAAV2017'
+        where variable = 'TDAAV'
     )
 select *
 from split_data

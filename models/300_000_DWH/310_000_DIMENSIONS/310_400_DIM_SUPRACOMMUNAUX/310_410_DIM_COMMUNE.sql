@@ -20,12 +20,12 @@ with
             code_arrondissement,
             code_canton,
             code_epci,
-            ze2020 as ze,
-            uu2020 as uu,
-            uustatut2017 as uustatut,
-            aav2020 as aav,
-            cateaav2020 as cateaav,
-            bv2012 as bv,
+            ze as ze,
+            uu as uu,
+            uustatut as uustatut,
+            aav as aav,
+            cateaav as cateaav,
+            bv as bv,
             typo_degre_densite
         from get_source
     ),

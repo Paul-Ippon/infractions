@@ -40,43 +40,43 @@ models:
       data_type: varchar(255)
       tests:
         - not_null
-    - name: ze2020
+    - name: ze
       data_type: varchar(5)
       tests:
         - not_null
-    - name: uu2020
+    - name: uu
       data_type: varchar(5)
       tests:
         - not_null
-    - name: tuu2017
+    - name: tuu
       data_type: varchar(255)
       tests:
         - not_null
-    - name: tduu2017
+    - name: tduu
       data_type: varchar(255)
       tests:
         - not_null
-    - name: uustatut2017
+    - name: uustatut
       data_type: varchar(255)
       tests:
         - not_null
-    - name: aav2020
+    - name: aav
       data_type: varchar(3)
       tests:
         - not_null
-    - name: taav2017
+    - name: taav
       data_type: varchar(255)
       tests:
         - not_null
-    - name: tdaav2017
+    - name: tdaav
       data_type: varchar(255)
       tests:
         - not_null
-    - name: cateaav2020
+    - name: cateaav
       data_type: varchar(255)
       tests:
         - not_null
-    - name: bv2012
+    - name: bv
       data_type: varchar(5)
       tests:
         - not_null

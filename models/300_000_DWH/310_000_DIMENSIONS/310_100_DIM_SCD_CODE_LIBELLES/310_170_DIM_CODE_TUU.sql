@@ -6,7 +6,7 @@ with
             code,
             libelle
         from get_source
-        where variable = 'TUU2017'
+        where variable = 'TUU'
     )
 select *
 from split_data

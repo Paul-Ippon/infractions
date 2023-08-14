@@ -8,19 +8,19 @@ models:
       database: "{{ target.database }}"
       schema: "DWH"
       alias: DIM_UNITE_URBAINE
-      unique_key: uu2020
+      unique_key: uu
       incremental_strategy: merge
       merge_exclude_columns: ['inserted_at']
     columns:
-    - name: uu2020
+    - name: uu
       data_type: varchar(5)
       tests:
         - not_null
-    - name: tuu2017
+    - name: tuu
       data_type: varchar(255)
       tests:
         - not_null
-    - name: tduu2017
+    - name: tduu
       data_type: varchar(255)
       tests:
         - not_null

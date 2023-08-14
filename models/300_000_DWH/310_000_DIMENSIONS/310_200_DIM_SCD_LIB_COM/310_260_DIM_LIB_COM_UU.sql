@@ -7,7 +7,7 @@ with
             libgeo,
             nb_com
         from get_source
-        where nivgeo = 'UU2020'
+        where nivgeo = 'UU'
     )
 select *
 from split_data

@@ -8,20 +8,20 @@ models:
       database: "{{ target.database }}"
       schema: "DWH"
       alias: DIM_AIRE_ATTRACTIVITE
-      unique_key: aav2020
+      unique_key: aav
       incremental_strategy: merge
       merge_exclude_columns: ['inserted_at']
     columns:
-    - name: aav2020
+    - name: aav
       data_type: varchar(3)
       tests:
         - not_null
         - unique
-    - name: taav2017
+    - name: taav
       data_type: varchar(255)
       tests:
         - not_null
-    - name: tdaav2017
+    - name: tdaav
       data_type: varchar(255)
       tests:
         - not_null

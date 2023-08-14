@@ -29,20 +29,20 @@ with
             iff(
                 len(nature_epci) > 255, '{{ var("err_value") }}', nature_epci
             ) as nature_epci,
-            iff(len(ze2020) > 5, '{{ var("err_value") }}', ze2020) as ze2020,
-            iff(len(uu2020) > 5, '{{ var("err_value") }}', uu2020) as uu2020,
-            iff(len(tuu2017) > 255, '{{ var("err_value") }}', tuu2017) as tuu2017,
-            iff(len(tduu2017) > 255, '{{ var("err_value") }}', tduu2017) as tduu2017,
+            iff(len(ze) > 5, '{{ var("err_value") }}', ze) as ze,
+            iff(len(uu) > 5, '{{ var("err_value") }}', uu) as uu,
+            iff(len(tuu) > 255, '{{ var("err_value") }}', tuu) as tuu,
+            iff(len(tduu) > 255, '{{ var("err_value") }}', tduu) as tduu,
             iff(
-                len(uustatut2017) > 255, '{{ var("err_value") }}', uustatut2017
-            ) as uustatut2017,
-            iff(len(aav2020) > 3, '{{ var("err_value") }}', aav2020) as aav2020,
-            iff(len(taav2017) > 255, '{{ var("err_value") }}', taav2017) as taav2017,
-            iff(len(tdaav2017) > 255, '{{ var("err_value") }}', tdaav2017) as tdaav2017,
+                len(uustatut) > 255, '{{ var("err_value") }}', uustatut
+            ) as uustatut,
+            iff(len(aav) > 3, '{{ var("err_value") }}', aav) as aav,
+            iff(len(taav) > 255, '{{ var("err_value") }}', taav) as taav,
+            iff(len(tdaav) > 255, '{{ var("err_value") }}', tdaav) as tdaav,
             iff(
-                len(cateaav2020) > 255, '{{ var("err_value") }}', cateaav2020
-            ) as cateaav2020,
-            iff(len(bv2012) > 5, '{{ var("err_value") }}', bv2012) as bv2012,
+                len(cateaav) > 255, '{{ var("err_value") }}', cateaav
+            ) as cateaav,
+            iff(len(bv) > 5, '{{ var("err_value") }}', bv) as bv,
             iff(
                 len(typo_degre_densite) > 255,
                 '{{ var("err_value") }}',
