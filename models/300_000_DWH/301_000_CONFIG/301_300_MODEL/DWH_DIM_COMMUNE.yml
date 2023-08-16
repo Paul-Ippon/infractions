@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: 310_410_DIM_COMMUNE
+  - name: 320_110_DIM_COMMUNE
     config:
       materialized: incremental
       database: "{{ target.database }}"
