@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: DWH_DIM_ZON_COM_UNITE_URBAINE
+    database: "{{ target.database }}"
+    schema: "{{ target.schema }}_DWH"
+    tables:
+      - name: DIM_ZON_COM_UNITE_URBAINE
+        columns:
+          - name: UU
+          - name: TUU
+          - name: TDUU

@@ -2,25 +2,22 @@
 version: 2
 
 models:
-  - name: 310_430_DIM_UNITE_URBAINE
+  - name: 310_410_DIM_ZON_COM_EPCI
     config:
       materialized: incremental
       database: "{{ target.database }}"
       schema: "DWH"
-      alias: DIM_UNITE_URBAINE
-      unique_key: uu
+      alias: DIM_ZON_COM_EPCI
+      unique_key: code_epci
       incremental_strategy: merge
       merge_exclude_columns: ['inserted_at']
     columns:
-    - name: uu
-      data_type: varchar(5)
+    - name: code_epci
+      data_type: varchar(9)
       tests:
         - not_null
-    - name: tuu
-      data_type: varchar(255)
-      tests:
-        - not_null
-    - name: tduu
-      data_type: varchar(255)
+        - unique
+    - name: nature_epci
+      data_type: varchar(225)
       tests:
         - not_null

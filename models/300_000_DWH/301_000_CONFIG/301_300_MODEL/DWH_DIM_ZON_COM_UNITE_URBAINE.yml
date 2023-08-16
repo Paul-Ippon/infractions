@@ -2,26 +2,25 @@
 version: 2
 
 models:
-  - name: 310_440_DIM_AIRE_ATTRACTIVITE
+  - name: 310_420_DIM_ZON_COM_UNITE_URBAINE
     config:
       materialized: incremental
       database: "{{ target.database }}"
       schema: "DWH"
-      alias: DIM_AIRE_ATTRACTIVITE
-      unique_key: aav
+      alias: DIM_ZON_COM_UNITE_URBAINE
+      unique_key: uu
       incremental_strategy: merge
       merge_exclude_columns: ['inserted_at']
     columns:
-    - name: aav
-      data_type: varchar(3)
+    - name: uu
+      data_type: varchar(5)
       tests:
         - not_null
-        - unique
-    - name: taav
+    - name: tuu
       data_type: varchar(255)
       tests:
         - not_null
-    - name: tdaav
+    - name: tduu
       data_type: varchar(255)
       tests:
         - not_null

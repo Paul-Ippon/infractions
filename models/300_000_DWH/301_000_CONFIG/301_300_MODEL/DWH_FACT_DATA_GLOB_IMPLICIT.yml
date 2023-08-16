@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: 320_112_FACT_DATA_GLOB_IMPLICIT
+  - name: 330_112_FACT_DATA_GLOB_IMPLICIT
     config:
       materialized: incremental
       database: "{{ target.database }}"

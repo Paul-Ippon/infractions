@@ -1,5 +1,5 @@
 with
-    get_source as (select * from {{ ref("320_110_FACT_DATA_GLOB") }}),
+    get_source as (select * from {{ ref("330_110_FACT_DATA_GLOB") }}),
     split_data as (
         select 
             codgeo,

@@ -2,11 +2,8 @@ with
     get_source as (select * from {{ ref("210_031_ZONAGES_SUPRACOMMUNAUX") }}),
     split_data as (
         select distinct
-            uu,
-            tuu,
-            tduu,
-            '{{ get_now() }}'::timestamp as inserted_at,
-            '{{ get_now() }}'::timestamp as updated_at
+            code_epci,
+            nature_epci
         from get_source
     )
 select *

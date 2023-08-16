@@ -4,9 +4,7 @@ with
         select distinct
             aav,
             taav,
-            tdaav,
-            '{{ get_now() }}'::timestamp as inserted_at,
-            '{{ get_now() }}'::timestamp as updated_at
+            tdaav
         from get_source
     )
 select *
