@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: DWH_DIM_ZON_COM_AIRE_ATTRACTIVITE
+    database: "{{ target.database }}"
+    schema: "{{ target.schema }}_DWH"
+    tables:
+      - name: DIM_ZON_COM_AIRE_ATTRACTIVITE
+        columns:
+          - name: AAV
+          - name: TAAV
+          - name: TDAAV

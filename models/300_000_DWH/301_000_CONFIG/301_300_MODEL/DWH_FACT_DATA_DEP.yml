@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: 320_120_FACT_DATA_DEP
+  - name: 330_120_FACT_DATA_DEP
     config:
       materialized: incremental
       database: "{{ target.database }}"

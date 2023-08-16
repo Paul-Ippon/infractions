@@ -28,25 +28,25 @@ sources:
             data_type: varchar(65535)
           - name: nature_epci
             data_type: varchar(65535)
-          - name: ze2020
+          - name: ze
             data_type: varchar(65535)
-          - name: uu2020
+          - name: uu
             data_type: varchar(65535)
-          - name: tuu2017
+          - name: tuu
             data_type: varchar(65535)
-          - name: tduu2017
+          - name: tduu
             data_type: varchar(65535)
-          - name: uustatut2017
+          - name: uustatut
             data_type: varchar(65535)
-          - name: aav2020
+          - name: aav
             data_type: varchar(65535)
-          - name: taav2017
+          - name: taav
             data_type: varchar(65535)
-          - name: tdaav2017
+          - name: tdaav
             data_type: varchar(65535)
-          - name: cateaav2020
+          - name: cateaav
             data_type: varchar(65535)
-          - name: bv2012
+          - name: bv
             data_type: varchar(65535)
           - name: typo_degre_densite
             data_type: varchar(65535)

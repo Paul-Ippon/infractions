@@ -1,0 +1,24 @@
+
+version: 2
+
+models:
+  - name: 310_430_DIM_ZON_COM_AIRE_ATTRACTIVITE
+    config:
+      materialized: table
+      database: "{{ target.database }}"
+      schema: "DWH"
+      alias: DIM_ZON_COM_AIRE_ATTRACTIVITE
+    columns:
+    - name: aav
+      data_type: varchar(3)
+      tests:
+        - not_null
+        - unique
+    - name: taav
+      data_type: varchar(255)
+      tests:
+        - not_null
+    - name: tdaav
+      data_type: varchar(255)
+      tests:
+        - not_null

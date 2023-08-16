@@ -1,17 +1,22 @@
+
 version: 2
 
 models:
-  - name: 210_031_ZONAGES_SUPRACOMMUNAUX
+  - name: 320_110_DIM_STD_COMMUNE
     config:
-      materialized: table
+      materialized: incremental
       database: "{{ target.database }}"
-      schema: "ODS"
-      alias: ZONAGES_SUPRACOMMUNAUX
+      schema: "DWH"
+      alias: DIM_STD_COMMUNE
+      unique_key: codegeo
+      incremental_strategy: merge
+      merge_exclude_columns: ['inserted_at']
     columns:
     - name: codegeo
       data_type: varchar(5)
       tests:
         - not_null
+        - unique
     - name: nom_de_la_commune
       data_type: varchar(255)
       tests:
@@ -36,10 +41,6 @@ models:
       data_type: varchar(9)
       tests:
         - not_null
-    - name: nature_epci
-      data_type: varchar(255)
-      tests:
-        - not_null
     - name: ze
       data_type: varchar(5)
       tests:
@@ -48,32 +49,24 @@ models:
       data_type: varchar(5)
       tests:
         - not_null
-    - name: tuu
-      data_type: varchar(255)
-      tests:
-        - not_null
-    - name: tduu
-      data_type: varchar(255)
-      tests:
-        - not_null
     - name: uustatut
-      data_type: varchar(255)
+      data_type: varchar(2)
+      tests:
+        - not_null
+    - name: uustatut_scd_id
+      data_type: varchar(32)
       tests:
         - not_null
     - name: aav
       data_type: varchar(3)
       tests:
         - not_null
-    - name: taav
-      data_type: varchar(255)
-      tests:
-        - not_null
-    - name: tdaav
-      data_type: varchar(255)
-      tests:
-        - not_null
     - name: cateaav
-      data_type: varchar(255)
+      data_type: varchar(2)
+      tests:
+        - not_null
+    - name: cateaav_scd_id
+      data_type: varchar(32)
       tests:
         - not_null
     - name: bv
@@ -81,6 +74,18 @@ models:
       tests:
         - not_null
     - name: typo_degre_densite
-      data_type: varchar(255)
+      data_type: varchar(2)
       tests:
         - not_null
+    - name: typo_degre_densite_scd_id
+      data_type: varchar(32)
+      tests:
+        - not_null
+    - name: inserted_at
+      data_type: timestamp
+      tests:
+          - not_null
+    - name: updated_at
+      data_type: timestamp
+      tests:
+          - not_null

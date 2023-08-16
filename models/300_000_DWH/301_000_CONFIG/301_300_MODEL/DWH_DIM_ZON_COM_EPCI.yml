@@ -1,0 +1,20 @@
+
+version: 2
+
+models:
+  - name: 310_410_DIM_ZON_COM_EPCI
+    config:
+      materialized: table
+      database: "{{ target.database }}"
+      schema: "DWH"
+      alias: DIM_ZON_COM_EPCI
+    columns:
+    - name: code_epci
+      data_type: varchar(9)
+      tests:
+        - not_null
+        - unique
+    - name: nature_epci
+      data_type: varchar(225)
+      tests:
+        - not_null
