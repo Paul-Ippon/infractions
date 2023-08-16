@@ -4,13 +4,10 @@ version: 2
 models:
   - name: 310_410_DIM_ZON_COM_EPCI
     config:
-      materialized: incremental
+      materialized: table
       database: "{{ target.database }}"
       schema: "DWH"
       alias: DIM_ZON_COM_EPCI
-      unique_key: code_epci
-      incremental_strategy: merge
-      merge_exclude_columns: ['inserted_at']
     columns:
     - name: code_epci
       data_type: varchar(9)

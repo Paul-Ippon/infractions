@@ -3,12 +3,10 @@ version: 2
 models:
   - name: 310_120_DIM_CODE_TYPO_DEGRE_DENSITE
     config:
-      materialized: incremental
+      materialized: table
       database: "{{ target.database }}"
       schema: "DWH"
       alias: DIM_CODE_TYPO_DEGRE_DENSITE
-      unique_key: code
-      incremental_strategy: merge
     columns:
       - name: variable
         data_type: varchar(32)
