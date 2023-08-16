@@ -53,6 +53,7 @@ with
             uustatut.code as uustatut,
             uustatut.dbt_scd_id as uustatut_scd_id,
             aav,
+            cateaav.code as cateaav,
             cateaav.dbt_scd_id as cateaav_scd_id,
             bv,
             typo_degre_densite.code as typo_degre_densite,

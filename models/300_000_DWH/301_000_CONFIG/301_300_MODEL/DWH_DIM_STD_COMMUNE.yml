@@ -53,6 +53,10 @@ models:
       data_type: varchar(2)
       tests:
         - not_null
+    - name: uustatut_scd_id
+      data_type: varchar(32)
+      tests:
+        - not_null
     - name: aav
       data_type: varchar(3)
       tests:
@@ -61,12 +65,20 @@ models:
       data_type: varchar(2)
       tests:
         - not_null
+    - name: cateaav_scd_id
+      data_type: varchar(32)
+      tests:
+        - not_null
     - name: bv
       data_type: varchar(5)
       tests:
         - not_null
     - name: typo_degre_densite
       data_type: varchar(2)
+      tests:
+        - not_null
+    - name: typo_degre_densite_scd_id
+      data_type: varchar(32)
       tests:
         - not_null
     - name: inserted_at
