@@ -2,12 +2,12 @@
 version: 2
 
 models:
-  - name: 320_110_DIM_COMMUNE
+  - name: 320_110_DIM_STD_COMMUNE
     config:
       materialized: incremental
       database: "{{ target.database }}"
       schema: "DWH"
-      alias: DIM_COMMUNE
+      alias: DIM_STD_COMMUNE
       unique_key: codegeo
       incremental_strategy: merge
       merge_exclude_columns: ['inserted_at']
