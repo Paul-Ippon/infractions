@@ -58,7 +58,7 @@ models:
       - name: inserted_at
         data_type: timestamp
         tests:
-          - not null
+          - not_null
       - name: updated_at
         data_type: timestamp
         tests: 
