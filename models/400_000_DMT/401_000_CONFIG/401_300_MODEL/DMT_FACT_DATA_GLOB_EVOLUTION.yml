@@ -1,0 +1,65 @@
+
+version: 2
+
+models:
+  - name: 410_210_FACT_DATA_GLOB_EVOLUTION
+    config:
+      materialized: incremental
+      database: "{{ target.database }}"
+      schema: "DMT"
+      alias: FACT_DATA_GLOB_EVOLUTION
+      unique_key: [codgeo, debut_annee, codeclasse]
+      incremental_strategy: merge
+      merge_exclude_columns: ['inserted_at']
+    tests:
+      - unique:
+          column_name: codgeo || '-' || debut_annee || '-' || codeclasse
+    columns:
+      - name: datatype_debut_annee
+        data_type: varchar(10)
+        tests:
+          - not_null
+      - name: datatype_fin_annee
+        data_type: varchar(10)
+        tests:
+          - not_null
+      - name: codgeo
+        data_type: varchar(5)
+        tests:
+          - not_null
+      - name: debut_annee
+        data_type: date
+        tests:
+          - not_null
+      - name: fin_annee
+        data_type: date
+        tests:
+          - not_null
+      - name: codeclasse
+        data_type: varchar(2)
+        tests:
+          - not_null
+      - name: codeunitedecompte
+        data_type: varchar(2)
+        tests:
+          - not_null
+      - name: faits_debut_annee
+        data_type: double
+      - name: faits_fin_annee
+        data_type: double
+      - name: faits_evolution
+        data_type: double
+      - name: tauxpourmille_debut_annee
+        data_type: double
+      - name: tauxpourmille_fin_annee
+        data_type: double
+      - name: tauxpourmille_evolution
+        data_type: double
+      - name: inserted_at
+        data_type: timestamp
+        tests:
+          - not null
+      - name: updated_at
+        data_type: timestamp
+        tests: 
+          - not_null
