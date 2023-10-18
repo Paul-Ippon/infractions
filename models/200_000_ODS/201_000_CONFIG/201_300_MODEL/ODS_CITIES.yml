@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: 210_081_CITIES
+    config:
+      materialized: table
+      database: "{{ target.database }}"
+      schema: "ODS"
+      alias: CITIES
+    columns:
+      - name: inseecode
+        data_type: varchar(5)
+        description: '{{ doc("ods_cities_inseecode") }}'
+        tests:
+          - not_null
+      - name: citycode
+        data_type: varchar(255)
+        description: '{{ doc("ods_cities_citycode") }}'
+        tests:
+          - not_null
+      - name: zipcode
+        data_type: varchar(5)
+        description: '{{ doc("ods_cities_zipcode") }}'
+        tests:
+          - not_null
+      - name: label
+        data_type: varchar(255)
+        description: '{{ doc("ods_cities_label") }}'
+        tests:
+          - not_null
+      - name: latitude
+        data_type: double
+        description: '{{ doc("ods_cities_latitude") }}'
+        tests:
+          - not_null
+      - name: longitude
+        data_type: double
+        description: '{{ doc("ods_cities_longitude") }}'
+        tests:
+          - not_null
+      - name: departmentname
+        data_type: varchar(255)
+        description: '{{ doc("ods_cities_departmentname") }}'
+        tests:
+          - not_null
+      - name: departmentnumber
+        data_type: varchar(3)
+        description: '{{ doc("ods_cities_departmentnumber") }}'
+        tests:
+          - not_null
+      - name: regionname
+        data_type: varchar(255)
+        description: '{{ doc("ods_cities_regionname") }}'
+        tests:
+          - not_null
+      - name: regiongeojsonname
+        data_type: varchar(255)
+        description: '{{ doc("ods_cities_regiongeojsonname") }}'
+        tests:
+          - not_null

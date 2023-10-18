@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: 280_080_ERR_CITIES
+    config:
+      materialized: view
+      database: "{{ target.database }}"
+      schema: "ODS"
+      alias: ODS_ERR_CITIES
+    columns:
+      - name: globalrunuuid
+        data_type: varchar(32)
+      - name: globalrunstartedat
+        data_type: timestamp
+      - name: runuuid
+        data_type: varchar(32)
+      - name: runstartedat
+        data_type: timestamp
+      - name: logtime
+        data_type: datetime
+      - name: sourcemodel
+        data_type: varchar(255)
+      - name: data
+        data_type: variant
