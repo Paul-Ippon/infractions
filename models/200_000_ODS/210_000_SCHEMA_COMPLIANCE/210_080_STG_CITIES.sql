@@ -22,7 +22,7 @@ with
             iff(len(departmentname) > 255, '{{ var("err_value") }}', departmentname) as departmentname,
             iff(len(departmentnumber) > 3, '{{ var("err_value") }}', departmentnumber) as departmentnumber,
             iff(len(regionname) > 255, '{{ var("err_value") }}', regionname) as regionname,
-            iff(len(regiongeojsonname) > 255, '{{ var("err_value") }}', regiongeojsonname) as regiongeojsonname,
+            iff(len(regiongeojsonname) > 255, '{{ var("err_value") }}', regiongeojsonname) as regiongeojsonname
         from get_source
     )
 select *
