@@ -10,7 +10,7 @@ sources:
         ext_full_refresh: true
         external:
           location: "@{{ target.database }}.{{ target.schema }}_DSA.STAGE_S3_INFRACTIONS"
-          file_format: "{{ target.database }}.{{ target.schema }}_DSA.CSV_INFRACTIONS"
+          file_format: "{{ target.database }}.{{ target.schema }}_DSA.CSV_INFRACTIONS_COMMA"
           pattern: "infractions/cities.csv"
         columns:
           - name: inseecode
