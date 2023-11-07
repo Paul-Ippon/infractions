@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: 210_080_STG_CITIES
+    config:
+      materialized: view
+      database: "{{ target.database }}"
+      schema: "ODS"
+      alias: STG_DATA_CITIES
+    columns:
+      - name: inseecode
+        data_type: varchar(65535)
+      - name: citycode
+        data_type: varchar(65535)
+      - name: zipcode
+        data_type: varchar(65535)
+      - name: label
+        data_type: varchar(65535)
+      - name: latitude
+        data_type: varchar(65535)
+      - name: longitude
+        data_type: varchar(65535)
+      - name: departmentname
+        data_type: varchar(65535)
+      - name: departmentnumber
+        data_type: varchar(65535)
+      - name: regionname
+        data_type: varchar(65535)
+      - name: regiongeojsonname
+        data_type: varchar(65535)
